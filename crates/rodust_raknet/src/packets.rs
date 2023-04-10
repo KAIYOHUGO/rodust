@@ -268,7 +268,7 @@ impl<'b> ParsePacket<'b> for OConnReply1 {
 
 #[derive(PartialEq, Eq, Debug, Clone)]
 pub enum SecurityState {
-    None,
+    Raw,
     Encrypt,
 }
 
@@ -279,7 +279,7 @@ impl<'b> ParsePacket<'b> for SecurityState {
         let use_security = buf.take_bool()?;
         let ret = match use_security {
             true => Self::Encrypt,
-            false => Self::None,
+            false => Self::Raw,
         };
         Ok(ret)
     }

@@ -1,18 +1,7 @@
-pub mod packets;
-pub mod types;
-pub mod socket;
+// mod socket;
+mod types;
+mod zeco_packets;
+pub mod frame;
+pub mod network;
 
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub use zeco_packets::*;

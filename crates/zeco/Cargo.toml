@@ -1,17 +1,17 @@
 [package]
-name = "rodust_raknet"
+name = "zeco"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-never-say-never = "6.6"
 thiserror = "1.0"
+integer-encoding = "3.0"
 
-[dependencies.tokio]
-version = "1"
-features = ["net", "macros", "rt-multi-thread", "sync"]
+[dependencies.zeco_derive]
+path = "../zeco_derive"
 
-[dependencies.zeco]
-path = "../zeco"
+[dev-dependencies]
+trybuild = "1.0"
+
